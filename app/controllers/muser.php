@@ -4,7 +4,7 @@ class muser extends Controller{
     {
         $data['judul'] = 'Daftar user';
         $data['msr'] = $this->model('muser_model')->getAllmuser();
-        $this->view('tamplates/header', $data);
+        // $this->view('tamplates/header', $data);  
         $this->view('muser/index' , $data);
         $this->view('tamplates/footer'); 
     }

@@ -7,7 +7,7 @@ class Login extends Controller {
         $database = new Database();
         $loginModel = new login_model($database);
 // Memanggil konstruktor login_model
-        $this->view('tamplates/header', $data);
+        // $this->view('tamplates/header', $data);
         $this->view('login/index' , $data);
         $this->view('tamplates/footer');
         

@@ -9,10 +9,10 @@ class muser_model {
     }
     
 
-public function getAllmuser(){
+    public function getAllmuser(){
     $this->db->query('SELECT * FROM pengguna');
     return $this->db->resultSet();
-}
+    }
 
     public function getmuserById($id)
     {
