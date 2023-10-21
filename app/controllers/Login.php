@@ -2,7 +2,7 @@
 class Login extends Controller {
     public function index() {
         
-        $data['judul'] = 'login model';
+        $data['judul'] = 'login';
         $loginModel = $this->model('login_model'); 
         $database = new Database();
         $loginModel = new login_model($database);

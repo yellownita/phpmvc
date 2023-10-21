@@ -2,10 +2,16 @@
 
 class muser_model {
     private $db;
-    private $table = 'pengguna'; // Ubah tabel menjadi 'siswa'
+    private $table = 'pengguna';
+    private $table2 = 'loker'; // Ubah tabel menjadi 'siswa'
 
     public function __construct() {
         $this->db = new Database;
+    }
+    
+    public function getRecordCount() {
+        $this->db->query('SELECT *  FROM pengguna');
+        return $this->db->resultSet();
     }
     
 
@@ -13,10 +19,20 @@ class muser_model {
     $this->db->query('SELECT * FROM pengguna');
     return $this->db->resultSet();
     }
+    public function getAllperu(){
+        $this->db->query('SELECT * FROM loker');
+        return $this->db->resultSet();
+    }
+    public function getperuById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        return $this->db ->single();
+    }
 
     public function getmuserById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT * FROM ' . $this->table2 . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db ->single();
     }

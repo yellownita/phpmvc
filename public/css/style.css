@@ -5,6 +5,10 @@
 /* Gaya lain yang sesuai dengan kebutuhan Anda */
 /* css darma */
 /* Crud Loker tambah */
+/* css */
+.btnTambahLoker{
+    margin-top: 5rem;
+ }
 .navy-lkr-tmb1{
     height: 40px; 
     background-color: #003364; 
@@ -176,8 +180,60 @@
 
 /* end darma */
 
+/* nadyas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Young+Serif&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.navbar,
+.nav-pills {
+  background-color: #003364;
+}
+.nav-item {
+  text-decoration: none;
+  color: white;
+}
 
+.card-link {
+  text-decoration: none;
+  color: #003364;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+label {
+  font-family: 'Young Serif', serif;
+}
+p,
+text,
+a,
+span,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
 
+footer {
+  background-color: #003364;
+  color: white;
+}
+.footer-list {
+  color: white;
+}
+.footer-list li {
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+/* end nadyas */

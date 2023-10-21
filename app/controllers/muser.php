@@ -2,7 +2,7 @@
 class muser extends Controller{
     public function index()
     {
-        $data['judul'] = 'Daftar user';
+        $data['judul'] = 'Manajemen Pengguna';
         $data['msr'] = $this->model('muser_model')->getAllmuser();
         // $this->view('tamplates/header', $data);  
         $this->view('muser/index' , $data);
@@ -10,11 +10,41 @@ class muser extends Controller{
     }
     public function detail($id)
     {
-        $data['judul'] = 'Daftar User';
+        $data['judul'] = 'Manajemen Pengguna';
         $data['msr'] = $this->model('muser_model')->getmuserById($id);
         $this->view('tamplates/header', $data);
         $this->view('muser/detail' , $data);
         $this->view('tamplates/footer'); 
+    }
+    public function dashboard()
+    {
+        $data['judul'] = 'Dashboard Admin';
+        $data['msr'] = $this->model('muser_model')->getAllmuser();
+        $data['recordCount']  = $this->model('muser_model')->getRecordCount();
+        $this->view('tamplates/header', $data);
+        $this->view('muser/dashboard' , $data);
+        $this->view('tamplates/footer', $data);
+
+
+
+    }
+    public function perusahaan()
+    {
+        $data['judul'] = 'Manajemen Perusahaan';
+        $data['msr'] = $this->model('muser_model')->getAllperu();
+        // $this->view('tamplates/header', $data);
+        $this->view('muser/perusahaan' , $data);
+        $this->view('tamplates/footer', $data);
+
+    }
+    public function admin()
+    {
+        $data['judul'] = 'Profil Admin';
+        $data['msr'] = $this->model('muser_model')->getAllmuser();
+        $this->view('tamplates/header', $data);
+        $this->view('muser/admin' , $data);
+        $this->view('tamplates/footer', $data);
+
     }
     public function tambah()
     {
