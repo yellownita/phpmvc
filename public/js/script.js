@@ -1,12 +1,20 @@
 $(function() {
 
-    $('.tampilTambahData').on('click', function(){
-        $('#formModalLabel').html('tambah data user');
-        $('modal-footer button[type=submit').html('tambah data');
+    $('.tombolTambahData').on('click', function(){
+        $('#formModalLabel').html('Tambah Data');
+        $('.modal-footer button[type=submit').html('Tambah Data');
     });
     $('.tampilModalUbah').on('click', function(){
-        $('#formModalLabel').html('ubah data user');
-        $('modal-footer button[type=submit').html('ubah data');
+        $('#formModalLabel').html('Ubah Data ');
+        
+        $('.modal-footer button[type=submit').html('Ubah Data');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+            URL: 'http//localhost/phpmvc/public/muser/getubah'
+        })
     });
 
 });
+// console.log('ok');

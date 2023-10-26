@@ -21,6 +21,7 @@ class muser extends Controller{
         $data['judul'] = 'Dashboard Admin';
         $data['msr'] = $this->model('muser_model')->getAllmuser();
         $data['recordCount']  = $this->model('muser_model')->getRecordCount();
+        $data['recordCount2']  = $this->model('muser_model')->getRecordCount2();
         $this->view('tamplates/header', $data);
         $this->view('muser/dashboard' , $data);
         $this->view('tamplates/footer', $data);
@@ -70,6 +71,19 @@ class muser extends Controller{
             header('Location: ' . BASEURL . '/muser');
             exit;
         } 
+    }
+    public function getubah()
+    {
+        if( $this->model('muser_model')->ubahDatamuser($_POST) > 0 ) {
+            Flasher::setFlash('berhasil', 'diubah', 'success');
+            header('Location: ' . BASEURL . '/muser');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'diubah', 'danger');
+            header('Location: ' . BASEURL . '/muser');
+            exit;
+        } 
+        echo json_encode($this->model('muser_model')->getmuserById($_POST['id']));
     }
     public function hapus($id)
     {

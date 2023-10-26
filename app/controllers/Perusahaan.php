@@ -8,6 +8,7 @@ class Perusahaan extends Controller{
     
     
         $data['prs'] = $this->model('perusahaan_model')->getAllloker();
+        $data['recordCount']  = $this->model('perusahaan_model')->getRecordCount();
         $this->view('perusahaan/index', $data);
         $this->view('tamplates/footer', $data);
 
@@ -46,6 +47,18 @@ class Perusahaan extends Controller{
         $this->view('perusahaan/loker' , $data);
         $this->view('tamplates/footer', $data);
 
+        if( $this->model('perusahaan_model')->tambahDataloker($_POST) > 0 ) {
+            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/perusahaan/');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/perusahaan/');
+            exit;}
+
+
+        
+
     }
     public function tambah()
     {
@@ -54,6 +67,15 @@ class Perusahaan extends Controller{
         // $this->view('tamplates/header', $data);
         $this->view('perusahaan/tambah' , $data);
         $this->view('tamplates/footer', $data);
+
+        if( $this->model('perusahaan_model')->tambahDataloker($_POST) > 0 ) {
+            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/perusahaan/loker');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/perusahaan/loker');
+            exit;}
 
     }
     // public function tambahdata(){
